@@ -198,6 +198,40 @@
 			funcionExpresada();
 
 			console.log('ESPACIO');
+
+			//Arrays
+			//es una colección de elementos de diversos tipos
+			//Siempre comienza con 0 y se puede anidar un array dentro de otro array
+
+			const aa = [];
+			const bb = [1, 'hi', [0, 'hola', true]];
+
+			console.log(aa);
+			console.log(bb);
+			console.log(bb[1]);
+			console.log(bb[2][2]);
+
+			//array.of es una nueva forma de añadir arreglos
+
+			const cc = Array.of('x', 'y', 'z');
+			console.log(cc);
+
+			const dd = Array(5).fill(true);
+			console.log(dd);
+
+			//para añadir(push) o quitar elementos(pop)
+
+			const colorES = ['Rojo', 'Verde', 'Amarillo'];
+			console.log(colorES);
+
+			colorES.push('Marrón');
+			colorES.pop();
+
+			//Método forEach puede añadir una Function al array
+
+			colorES.forEach(function (el, index) {
+				console.log(`<li id="${index}">${el}</li>`);
+			});
 		</script>
 	</body>
 </html>
