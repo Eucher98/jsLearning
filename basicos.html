@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Inicios de Javascript</title>
+	</head>
+	<body>
+		<h1>Inicios de Javascript ñ</h1>
+		<script>
+			var hola = 'Hola mundo';
+			console.log(hola);
+			let hello = 'hola Mundo';
+			console.log(hello);
+			//ambito de bloque
+			//bloque
+			var musica = 'Rock';
+			console.log('variable musica antes del bloque', musica);
+			{
+				var musica = 'Pop';
+				console.log('variable musica dentro del bloque', musica);
+			}
+			console.log('variable musica despus del bloque', musica);
+			console.log('espacio');
+			let musica2 = 'Rock';
+			console.log('variable musica antes del bloque', musica2);
+			{
+				let musica2 = 'Pop';
+				console.log('variable musica dentro del bloque', musica2);
+			}
+			console.log('variable musica despus del bloque', musica2);
+
+			let a;
+			const PI = '3.1416';
+			console.log(PI);
+			a = 'Juan';
+			console.log(a);
+
+			let Objeto = {
+				nombre: 'Anastasio',
+				edad: 69,
+			};
+
+			let Arreglo = ['jazmin', 'rosa', 'durian'];
+
+			console.log(Objeto);
+			console.log(Arreglo);
+
+			Objeto.correo = 'tasio@yahoo.com';
+			Arreglo.push('laurel');
+
+			console.log(Objeto);
+			console.log(Arreglo);
+
+			//cadenas de texto  Strings
+
+			console.log('ESPACIO');
+
+			let nombre = 'juan';
+			let apellido = 'euceda';
+			let saludo = new String('Hola Mundo');
+			let lorem = 'lore';
+
+			console.log(nombre, apellido, saludo);
+			console.log(nombre.length, apellido.length, saludo.length);
+
+			//concatenación
+
+			let Nombre = 'Juan';
+			let Apellido = 'Charrasquiado';
+
+			let Saluo = 'Hi, mi name is ' + Nombre + ' ' + Apellido + '.';
+			console.log(Saluo);
+
+			//Interpolación template strings
+
+			let Saluo2 = `Hi, my name is, ${Nombre} ${Apellido}.`;
+			console.log(Saluo2);
+
+			console.log('ESPACIO');
+
+			//Number
+
+			let A = 1;
+			let B = new Number(2);
+			let C = 5.19;
+			let D = '5.6';
+
+			console.log(A, B);
+			console.log(C.toFixed(1));
+			console.log(C.toFixed(5));
+			console.log(parseInt(C));
+			console.log(parseFloat(C));
+			console.log(typeof C, typeof D);
+			console.log(A + B);
+			console.log(C + parseInt(D));
+			console.log(C + parseFloat(D));
+			console.log(C + Number.parseInt(D));
+			console.log(C + Number.parseFloat(D));
+
+			console.log('ESPACIO');
+
+			//Booleans
+
+			let verdadero = true;
+			let falso = false;
+			let v = Boolean(true);
+			let f = Boolean(false);
+
+			console.log(verdadero, falso, v, f);
+			console.log(typeof verdadero, typeof falso);
+			console.log(Boolean(0));
+			console.log(Boolean(-7));
+			console.log(Boolean(''));
+			console.log(Boolean(' '));
+
+			console.log('ESPACIO');
+
+			//undefinied null NaN
+
+			//undefined es cuando a una variable no se le asigna valor
+			let indefinida;
+			console.log(indefinida);
+			//null es cuando el programador coloca intencionalmente una variable vacía
+			let nulo = null;
+			console.log(nulo);
+			//NaN Not a Number se muestra cuando en una operación numérica se incluye un dato no numérico
+			let noEsUnNumero = 'hi' * 35;
+			console.log(noEsUnNumero);
+
+			console.log('ESPACIO');
+
+			//Funciones
+
+			//Función Declarada
+			//Pueden invocarse en cualquier parte del código incluso antes de ser declarada
+			function esUnaFuncionDeclarada() {
+				console.log('yo');
+				console.log('soy');
+				console.log('cachimbón');
+			}
+
+			//Invocación de una función
+			esUnaFuncionDeclarada();
+
+			console.log('ESPACIO');
+			//función que retorna valor
+			function esFuncionRetornaValor() {
+				console.log('yo');
+				console.log('soy');
+				console.log('cachimbón');
+				return 'La función retorna cadena de texto';
+			}
+
+			let valorDeFuncion = esFuncionRetornaValor();
+			console.log(valorDeFuncion);
+
+			console.log('ESPACIO');
+
+			//Return ejecuta todo los que se encuentra antes de su declaración
+			function esFuncionRetornaValor() {
+				console.log('yo');
+				return 69;
+				console.log('soy');
+				console.log('cachimbón');
+				return 'La función retorna cadena de texto';
+			}
+
+			let valorDeFuncion2 = esFuncionRetornaValor();
+			console.log(valorDeFuncion2);
+
+			console.log('ESPACIO');
+
+			//parámetros en una función
+			function saluito(nonbre, apeido) {
+				console.log(`hola, mi nombre es ${nonbre} y tengo ${apeido} años`);
+			}
+
+			saluito('ivan', 39);
+
+			console.log('ESPACIO');
+			//otro ejemplo añadiendo valores por defecto a los parámetros
+			function saluito2(nonbre = 'desconocido', apeido = 0) {
+				console.log(`hola, mi nombre es ${nonbre} y tengo ${apeido} años`);
+			}
+
+			saluito2();
+
+			console.log('ESPACIO');
+			//Función anónima (Expresada)
+			//Es una función que se le ha asignado como valor a una variable
+
+			const funcionExpresada = function () {
+				console.log('es una función expresada');
+			};
+
+			funcionExpresada();
+
+			console.log('ESPACIO');
+		</script>
+	</body>
+</html>
