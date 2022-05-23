@@ -232,6 +232,94 @@
 			colorES.forEach(function (el, index) {
 				console.log(`<li id="${index}">${el}</li>`);
 			});
+
+			console.log('ESPACIO');
+
+			//Objetos
+			//Es una colección de atributos y valores que puede incluir distintos tipos de datos, además de otros objetos y function
+			//En objetos a las variables se les llama atributos/propiedades y alas funciones "metodos"
+
+			const a1 = {};
+			const b1 = new Object();
+			console.log(a1, b1);
+
+			//Objeto con otro objet y function dentro
+			//this hace referencia a una propiedad dentro del mmismo objeto
+
+			const c1 = {
+				nombre: 'Sandro',
+				apellido: 'Carrasco',
+				edad: 69,
+				pasatiempos: ['ver TV', 'comer', 'correr', 'trabajar'],
+				contacto: {
+					dirección: 'calle de Las Casitas, 2, Albacete',
+					correo: 'hoyeshoy@outlook.com',
+					teléfono: 5555555,
+				},
+			};
+
+			console.log(c1);
+
+			//buscar un valor dentro de nuestro objeto
+
+			console.log(c1.apellido);
+			console.log(c1.pasatiempos[2]);
+			//c1.saludar();
+
+			//console.log(objet.keys(c1));
+			console.log('ESPACIO');
+
+			//Operadores
+			//aritmeticos: + - / * () y %(que es conocido como módulo y devuelve el residuo de una división)
+
+			let mat = 5 + (2 - 4) * 9;
+			let modulo = 5 % 2;
+
+			console.log(mat);
+			console.log(modulo);
+
+			console.log('ESPACIO');
+
+			//relacionales: <, >, <=, >=, ==, ===, !=, !==
+
+			console.log(8 < 9);
+			console.log(8 <= 7);
+
+			//= es asignación de variable, == es comparación de valore, === es comparación de datos y valores
+			console.log(8 == 8);
+			console.log('8' == 8);
+			console.log(0 == false);
+			//utilizar == es mala práctica, usar siempre === para comparar
+			console.log(8 === 8);
+			console.log('8' === 8);
+			console.log(0 === false);
+
+			console.log('ESPACIO');
+			//Incremento Decremento: +=, -=, *=, /=
+
+			let i = 1;
+			i += 3;
+			i -= 3;
+			i /= 3;
+			i *= 3;
+			console.log(i);
+
+			console.log('ESPACIO');
+			//Operador unario: ++ suma una unidad, -- resta una unidad
+			i++;
+			i--;
+			++i;
+			--i;
+			console.log(i);
+
+			console.log('ESPACIO');
+			//Operadores Lógicos: ! es Not (niega, V=F ó F=V), || es or (valida si hay un valor verdadero dentro los datos), && es and (valida sólo si todos los valores son verdaderos)
+			console.log(!true);
+			console.log(!false);
+			console.log(9 === 9 || '9' === 9);
+			console.log(9 === 9 && '9' === 9);
+
+			console.log('ESPACIO');
 		</script>
 	</body>
 </html>
