@@ -320,6 +320,202 @@
 			console.log(9 === 9 && '9' === 9);
 
 			console.log('ESPACIO');
+
+			//COnDICIONALES
+			// If-Else (si, entonces)
+
+			let edaD = 17;
+
+			if (edaD > 17) {
+				console.log('Eres mayor de edad');
+			} else {
+				console.log('Eres menor de edad');
+			}
+
+			console.log('ESPACIO');
+			// If-Else if-Else (anidados)
+
+			let hora = 5;
+
+			if (hora >= 0 && hora <= 5) {
+				console.log('Dejame dormir');
+			} else if (hora >= 6 && hora <= 11) {
+				console.log('Buenos dias');
+			} else if (hora >= 12 && hora <= 18) {
+				console.log('Buenas tardes');
+			} else {
+				console.log('Buenas noches');
+			}
+
+			console.log('ESPACIO');
+			//Operador ternario: simplifica If-Else
+			//Consta de una condición (), si es verdadero utiliza ?, si es falso utiliza :.
+
+			let eresMayor = edaD >= 18 ? 'Eres mayor de edad' : 'Eres menor de edad';
+			console.log(eresMayor);
+
+			console.log('ESPACIO');
+			//Switch-case: diferentes valores para una misma variable
+
+			let dia = 5;
+
+			switch (dia) {
+				case 0:
+					console.log('Domingo');
+					break;
+				case 1:
+					console.log('Lunes');
+					break;
+				case 2:
+					console.log('Martes');
+					break;
+				case 3:
+					console.log('Miércoles');
+					break;
+				case 4:
+					console.log('Jueves');
+					break;
+				case 5:
+					console.log('Viernes');
+					break;
+				case 6:
+					console.log('Sábado');
+					break;
+				default:
+					console.log('No existe');
+					break;
+			}
+			console.log('ESPACIO');
+
+			//CICLOS (Loops)
+			//While (Mientras) evalúa la condición y muestra los resultados si la condición se cumple
+
+			let conta = 0;
+			while (conta < 10) {
+				console.log('while' + conta);
+				conta++;
+			}
+
+			console.log('ESPACIO');
+
+			//do while  muestra el resultado y luego evalua la condición
+
+			do {
+				console.log('do while' + conta);
+				conta++;
+			} while (conta < 10);
+
+			console.log('ESPACIO');
+			//For: consta de tres partes (iniciación de variable) (condición) (incremento7decremento), luego su sentencia o ejecución.
+
+			for (let i = 0; i < 0; i++) {
+				console.log('For' + i);
+			}
+
+			let numbr = [10, 23, 38, 47, 55, 69, 71, 88, 93];
+
+			for (let i = 0; i < numbr.length; i++) {
+				console.log(numbr[i]);
+			}
+
+			console.log('ESPACIO');
+			//For in muestra el recorrido de las propiedades de un objeto primitivo
+
+			const Manuel = {
+				Nombre: 'Manuel',
+				Apellido: 'Euceda',
+				Edad: 35,
+			};
+
+			for (const prop in Manuel) {
+				console.log(`key: ${prop}, value: ${Manuel[prop]}`);
+			}
+
+			console.log('ESPACIO');
+			//for of recorre todos los elementos de todos los objetos que sean iterables (partirse) como ser arreglos o strings
+
+			for (const nmr of numbr) {
+				console.log(nmr);
+			}
+
+			let hiw = 'H Mund';
+
+			for (const hi of hiw) {
+				console.log(hi);
+			}
+
+			console.log('ESPACIO');
+
+			//MANEJO DE ERRORES
+			//Try-Catch
+
+			try {
+				console.log('En el Try se coloca el código a evaluar');
+				dontExiste;
+			} catch (error) {
+				console.log('Catch captura cualquier error surgido en el Try');
+				console.log(error);
+			} finally {
+				console.log('Finally se ejecutará al final de un try-catch');
+			}
+
+			//para personalizar el mensaje de error:
+			try {
+				let nmero = a;
+
+				if (isNaN(nmero)) {
+					throw new Error('El carácter introducido no es un número');
+				}
+
+				console.log(nmero * nmero);
+			} catch (error) {
+				console.log(`Se producjo el siguiente error: ${error}`);
+			}
+
+			console.log('ESPACIO');
+
+			//Break & Continue
+			//Break: omite todos los valores despues de break, Continue: omite sólo el valor siguiente y continua con el resto.
+
+			for (let i = 0; i < numbr.length; i++) {
+				if (i === 5) {
+					break;
+				}
+				console.log(numbr[i]);
+			}
+
+			console.log('ESPACIO');
+
+			for (let i = 0; i < numbr.length; i++) {
+				if (i === 5) {
+					continue;
+				}
+				console.log(numbr[i]);
+			}
+
+			console.log('ESPACIO');
+
+			//DESTRUCTURACIÓN
+
+			//Para Arreglo
+			const numeric = [1, 2, 3];
+
+			const [One, Two, Three] = numeric;
+			console.log(numeric);
+
+			console.log('ESPACIO');
+			//Para Objeto
+
+			const datos = {
+				Nombre: 'Hector',
+				Apellido: 'Hernández',
+				Edad: 35,
+			};
+
+			let { Nombre, Apellido, Edad } = datos;
+			console.log(Nombre, Apellido, Edad);
+
+			console.log('ESPACIO');
 		</script>
 	</body>
 </html>
