@@ -67,15 +67,15 @@
 
 			//concatenación
 
-			let Nombre = 'Juan';
-			let Apellido = 'Charrasquiado';
+			let ombre = 'Juan';
+			let Apelido = 'Charrasquiado';
 
-			let Saluo = 'Hi, mi name is ' + Nombre + ' ' + Apellido + '.';
+			let Saluo = 'Hi, mi name is ' + ombre + ' ' + Apelido + '.';
 			console.log(Saluo);
 
 			//Interpolación template strings
 
-			let Saluo2 = `Hi, my name is, ${Nombre} ${Apellido}.`;
+			let Saluo2 = `Hi, my name is, ${ombre} ${Apelido}.`;
 			console.log(Saluo2);
 
 			console.log('ESPACIO');
@@ -138,7 +138,7 @@
 			function esUnaFuncionDeclarada() {
 				console.log('yo');
 				console.log('soy');
-				console.log('cachimbón');
+				console.log('Eucher');
 			}
 
 			//Invocación de una función
@@ -149,7 +149,7 @@
 			function esFuncionRetornaValor() {
 				console.log('yo');
 				console.log('soy');
-				console.log('cachimbón');
+				console.log('Eucher');
 				return 'La función retorna cadena de texto';
 			}
 
@@ -507,13 +507,100 @@
 			//Para Objeto
 
 			const datos = {
-				Nombre: 'Hector',
-				Apellido: 'Hernández',
-				Edad: 35,
+				Names: 'Hector',
+				Fnames: 'Hernández',
+				Dat: 35,
 			};
 
-			let { Nombre, Apellido, Edad } = datos;
-			console.log(Nombre, Apellido, Edad);
+			let { Names, Fnames, Dat } = datos;
+			console.log(Names, Fnames, Dat);
+
+			console.log('ESPACIO');
+
+			//OBJETOS LITERALES
+			//Es una nueva forma de escribir atributos y métodos
+
+			let nm = 'Manu',
+				dt = 35;
+
+			const perro = {
+				nm: nm,
+				dt: dt,
+				ladrar: function () {
+					console.log('guau, guau!');
+				},
+			};
+			console.log(perro);
+			perro.ladrar();
+
+			//Se simplifica así: si una variable tiene el mismo nombre que añadiremos en un objeto, solo hay que referenciar el nombre de la variable
+
+			const dog = {
+				nm,
+				dt,
+				ladrar() {
+					console.log('guau guau guau');
+				},
+			};
+
+			console.log(dog);
+			dog.ladrar();
+			console.log('ESPACIO');
+
+			//PARÁMETROS REST & OPERADOR SPREAD
+			//Parámetros REST se usa anteponiendo ... al atributo que se desea
+
+			function sum(a, b, ...c) {
+				let result = a + b;
+
+				c.forEach(function (n) {
+					result += n;
+				});
+				return result;
+			}
+
+			console.log(sum(1, 2));
+			console.log(sum(1, 2, 3));
+			console.log(sum(1, 2, 3, 5));
+			console.log(sum(1, 2, 3, 5, 8));
+
+			//Spread (expansión) utilizando ... (REST) se pueden unir o expandir dos o más grupos de datos en uno solo
+
+			const arr1 = [1, 2, 3, 4, 5],
+				arr2 = [6, 7, 8, 9, 0];
+
+			console.log(arr1, arr2);
+			console.log(...arr1, ...arr2);
+
+			console.log('ESPACIO');
+
+			//ARROW FUNCTION
+			//Simplifica las funciones expresadas (anónimas) quitando Function por => entre los() y {}.
+			//Cuando el contenido es sólo una linea se omiten los {}
+
+			const mar = () => console.log('olas');
+			mar();
+
+			console.log('ESPACIO');
+
+			//Cuando una arrow function no recibe parámetros (como el caso anterior) se debe colocar (). Si tiene sólo un parámetro se omite ().
+			const Mar = (colours) => console.log(`olas ${colours}`);
+			Mar('azules');
+
+			console.log('ESPACIO');
+
+			//Return en Arrow Function es explicito, o sea no se necesita decarar
+			const restand = (f, g) => f - g;
+			console.log(restand(9, 3));
+
+			console.log('ESPACIO');
+
+			//Arrow Function en ForEach
+			const letras = [1, 2, 3, 4, 5];
+
+			letras.forEach((el, index) =>
+				console.log(`${el} está en la posición ${index}`)
+			);
 
 			console.log('ESPACIO');
 		</script>
