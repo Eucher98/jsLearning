@@ -603,6 +603,138 @@
 			);
 
 			console.log('ESPACIO');
+
+			//PROTOTIPOS
+			//Es un mecanismo por el cual un objeto hereda propiedades de un objeto padre.
+			//POO (Programacion Orientada a Objetos)
+			//Clases: modelo a seguir. Esquema para generar instancias.
+			//Objeto: es una instancia de una clase. Tienen dos elementos (Atributos y métodos).
+			//Atributos:es una característica o propiedad del objeto (variables dentro de un objeto).
+			//Métodos:son las acciones que un objeto puede realizar (son funciones dentro del objeto).
+
+			const animal = {
+				llamado: 'lobito',
+				sonar() {
+					console.log('hago sonido porque estoy vivo');
+				},
+			};
+			const animal2 = {
+				llamado: 'lobita',
+				sonar() {
+					console.log('hago sonido porque estoy vivo');
+				},
+			};
+
+			console.log(animal);
+			console.log(animal2);
+
+			//Función Constructora
+			function Animal(sellama, genero) {
+				//Atributo
+				this.sellama = sellama;
+				this.genero = genero;
+
+				//Metodos
+				this.Hi = function () {
+					console.log(`Hola me llamo ${this.sellama} y ...`);
+				};
+				this.suena = function () {
+					console.log('Hago sonido porque estoy vivo');
+				};
+			}
+
+			// new nos ayuda a crear una nueva instancia a partir del objeto padre (en éste caso Función Constructora).
+			const loBito = new Animal('lobito', 'macho'),
+				loBita = new Animal('lobita', 'hembra');
+
+			console.log(loBito);
+			console.log(loBita);
+			console.log('ESPACIO');
+			loBito.Hi();
+			loBito.suena();
+			loBita.Hi();
+			loBita.suena();
+
+			console.log('ESPACIO');
+			//Para evitar que los métodos se repitan innecesariamente en todas las instancias, lo correcto es sacar los
+			//métodos y luego pegarlos a los prototipos
+
+			//Función constructora basadaen los criterios anteriores
+			function Animal2(sellama, genero) {
+				//Atributo
+				this.sellama = sellama;
+				this.genero = genero;
+			}
+
+			//Metodos agregados a la función constructora mediante "prototype"
+			Animal2.prototype.Hi = function () {
+				console.log(`Hola me llamo ${this.sellama} y ...`);
+			};
+			Animal2.prototype.suena = function () {
+				console.log('Hago sonido porque estoy vivo');
+			};
+
+			const lobIto = new Animal2('lobito', 'macho'),
+				lobIta = new Animal2('lobita', 'hembra');
+
+			console.log(lobIto);
+			console.log(lobIta);
+			console.log('ESPACIO');
+			lobIto.Hi();
+			lobIto.suena();
+			lobIta.Hi();
+			lobIta.suena();
+
+			console.log('ESPACIO');
+
+			//HERENCIA PROTOTÍPICA
+
+			function Animal3(sellama, genero) {
+				this.sellama = sellama;
+				this.genero = genero;
+			}
+
+			Animal3.prototype.Hii = function () {
+				console.log(`Hola me llamo ${this.sellama} y ...`);
+			};
+			Animal3.prototype.suenna = function () {
+				console.log('Hago sonido porque estoy vivo');
+			};
+
+			//La herecia prototípica se construye así:
+			function Perro(sellama, genero, tamanio) {
+				this.super = Animal3;
+				this.super(sellama, genero);
+				this.super = tamanio;
+			}
+
+			//Perro está heredando de Animal3
+			Perro.prototype = new Animal3();
+			Perro.prototype.constructor = Perro;
+
+			//Sobreescritura de métodos de un prototipo padre a un hijo (de Animal3 a Perro)
+			Perro.prototype.suenna = function () {
+				console.log('soy un-a perro-a, mi sonido es ladrido');
+			};
+			Perro.prototype.ladrido = function () {
+				console.log('guauuu, guauuu!');
+			};
+
+			const albino = new Perro('Albino', 'macho', 'chiquito'),
+				manchita = new Perro('Manchita', 'hembra', 'grandota');
+
+			console.log(albino);
+			console.log(manchita);
+			console.log('ESPACIO');
+			albino.Hii();
+			albino.suenna();
+			albino.ladrido();
+			console.log('ESPACIO');
+			manchita.Hii();
+			manchita.suenna();
+			manchita.ladrido();
+
+			console.log('ESPACIO');
 		</script>
 	</body>
 </html>
