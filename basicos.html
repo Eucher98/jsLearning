@@ -735,6 +735,99 @@
 			manchita.ladrido();
 
 			console.log('ESPACIO');
+
+			//CLASES Y HERENCIAS
+
+			class Mascot {
+				//Costructor es un metodo especial que se ejecuta en el momento de instanciar clases
+				constructor(yourName, genre) {
+					this.yourName = yourName;
+					this.genre = genre;
+				}
+				//Metodos: sin usar el metodo This
+				ElSaludo() {
+					console.log(`Hola me llamo ${this.yourName} y ...`);
+				}
+				ElSonido() {
+					console.log('Hago sonido porque estoy vivo');
+				}
+			}
+
+			//Herencia de Class
+			class Cat extends Mascot {
+				constructor(yourName, genre, dimension) {
+					//Con el método Super() se manda a llamar al constructor de la clase padre
+					super(yourName, genre);
+					this.dimension = dimension;
+					this.raza = null;
+				}
+				//Sobreescritura en Class:
+				ElSonido() {
+					console.log('Maullo porque soy gato, ');
+				}
+				ElMaullo() {
+					console.log('miau, miau');
+				}
+
+				//Método Estático: Statics
+				static QueEres() {
+					console.log(
+						'Un gato es un animal mamífero perteneciente a la familia de los felinos...'
+					);
+				}
+
+				//Los SETTERS y GETTERS son métodos especiales que nos permiten establecer y obtener los valores y atributos de nuestra clase.
+				get getraza() {
+					return this.raza;
+				}
+				set setraza(raza) {
+					this.raza = raza;
+				}
+			}
+
+			const Sirius = new Mascot('Sirius', 'Machito'),
+				Catalino = new Cat('Catalino', 'Macho', 'chiquito');
+
+			Cat.QueEres();
+			console.log(Sirius);
+			Sirius.ElSaludo();
+			Sirius.ElSonido();
+			console.log('E S P A C I O');
+			console.log(Catalino);
+			Catalino.ElSaludo();
+			Catalino.ElSonido();
+			Catalino.ElMaullo();
+			console.log('E S P A C I O');
+			Catalino.setraza = 'Gato Común';
+			console.log(Catalino.getraza);
+
+			//METODOS ESTATICOS: GETTERS Y SETTERS
+			//Un método estático se puede ejecutar sin necesidad de instanciar la clase
+			console.log('ESPACIO');
+
+			//OBJETO CONSOLE
+			console.log(console);
+			console.error('Esto es un error');
+			console.warn('esto es un AVISO');
+			console.log('Muestra un registro de lo que ha pasado en nuestra app/web');
+			console.info('Esto es un mensaje informativo');
+			console.log('ESPACIO');
+
+			let fruta = 'manzana',
+				sabor = 'dulce',
+				cant = 3;
+
+			console.log(
+				`Hola, me gusta la ${fruta} porque es ${sabor}  y tengo ${cant}`
+			);
+
+			//Los comodines %s para letras y %d para números nos sirven para interpolar mejor
+			console.log(
+				`Hola, me gusta la %s porque es %s y tengo %d`,
+				fruta,
+				sabor,
+				cant
+			);
 		</script>
 	</body>
 </html>
