@@ -770,6 +770,7 @@
 				}
 
 				//Método Estático: Statics
+				//Un método estático se puede ejecutar sin necesidad de instanciar la clase
 				static QueEres() {
 					console.log(
 						'Un gato es un animal mamífero perteneciente a la familia de los felinos...'
@@ -777,6 +778,7 @@
 				}
 
 				//Los SETTERS y GETTERS son métodos especiales que nos permiten establecer y obtener los valores y atributos de nuestra clase.
+				//METODOS ESTATICOS: GETTERS Y SETTERS
 				get getraza() {
 					return this.raza;
 				}
@@ -801,8 +803,6 @@
 			Catalino.setraza = 'Gato Común';
 			console.log(Catalino.getraza);
 
-			//METODOS ESTATICOS: GETTERS Y SETTERS
-			//Un método estático se puede ejecutar sin necesidad de instanciar la clase
 			console.log('ESPACIO');
 
 			//OBJETO CONSOLE
@@ -828,6 +828,116 @@
 				sabor,
 				cant
 			);
+			console.clear();
+
+			//OBJETO DATE
+
+			console.log(Date());
+
+			let fecha = new Date();
+
+			console.log(fecha);
+			//Día del mes
+			console.log(fecha.getDate());
+			//Día de la semana (D,L,M,M,J,V,S = 0,1,2,3,4,5,6)
+			console.log(fecha.getDay());
+			//Mes del año: ene=0, feb=1, etc...
+			console.log(fecha.getMonth());
+			//Año a partir de 1900, no usar
+			console.log(fecha.getYear());
+			//Año estilo convencional
+			console.log(fecha.getFullYear());
+			//Distintos métodos para utilizar Date
+			console.log(fecha.getHours());
+			console.log(fecha.getUTCMinutes());
+			console.log(fecha.getSeconds());
+			console.log(fecha.getMilliseconds());
+			console.log(fecha.toString());
+			console.log(fecha.toDateString());
+			console.log(fecha.toLocaleString());
+			console.log(fecha.toLocaleDateString());
+			console.log(fecha.toLocaleTimeString());
+			console.log(fecha.getTimezoneOffset());
+			//UTC es para definir huso horario del meridiano de Greenwich
+			console.log(fecha.getUTCDate());
+			//Para definir cuantos segundos han pasado desde 01-01-1970
+			console.log(Date.now());
+			//Cómo muestro mi fecha de nacimiento?
+			let micumple = new Date(1987, 03, 19);
+			console.log(micumple);
+
+			console.log('ESPACIO');
+			//OBJETO MATH
+			console.log(Math);
+			//Tiene algunas propiedades fijas como en éste caso PI
+			console.log(Math.PI);
+			//Math.abs muestra el valor absoluto de un número sin importar si es positivo o negativo
+			console.log(Math.abs(-6.9));
+			//Para redondear: .ceil(Spuerior inmediato), .floor(Inferior inmediato), .round(más cercano inmediato)
+			console.log(Math.ceil(6.9));
+			console.log(Math.floor(6.9));
+			console.log(Math.round(6.9));
+			//Raiz cuadrada .sqrl(número), Potencias .pow(base, exponente)
+			console.log(Math.sqrt(69));
+			console.log(Math.pow(6, 9));
+			//Math.sign muestra si un número es positivo (1), negativo (-1) o 0 (0)
+			console.log(Math.sign(-69));
+			//Math.random muestra un número aleatorio comprendido entre 0 y 1
+			console.log(Math.random());
+			console.log(Math.random() * 1000);
+			console.log(Math.round(Math.random() * 1000));
+
+			console.log('E S P A C I O');
+			//OPERADOR DE CORTOCIRCUITO
+			//Cortocircuito con OR: cuando el valor de la izq siempre pueda validar a "true", ese valor se cargará por defecto
+			function ave(tipo) {
+				tipo = tipo || 'Desconocido';
+				console.log(`Este es un ${tipo} y es un ave`);
+			}
+
+			ave();
+			ave('cotorro');
+
+			//Cortocircuito con AND: cuando el valor de la izq siempre ueda validar a "false", ese valor se cargará por defecto
+			function ave1(tipo1) {
+				tipo1 = tipo1 && 'Desconocido';
+				console.log(`Este es un ${tipo1} y es un ave`);
+			}
+
+			ave1();
+			ave1('cotorro');
+
+			console.log('ESPACIO');
+
+			//ALERT, CONFIRM y PROMPT
+
+			console.log(window);
+
+			//window.alert('Alerta');
+			//window.confirm('confirmacion');
+			//window.prompt('aviso');
+
+			/*let alerta = alert('ALERTA'),
+				confirmacion = confirm('CONFIRMACION'),
+				aviso = prompt('AVISO');*/
+
+			//console.log(alerta);
+			//console.log(confirmacion);
+			//console.log(aviso);
+
+			console.clear();
+			//EXPRESIONES REGULARES
+			//Son una secuencia de caracteres que forman un patron de busqueda, generalmente texto
+
+			let caden = 'A,B,C,D,E,F,C, G,H,I,J';
+
+			//Existen dos formas de declarar las expresiones
+			let ExpReg = RegExp('c', 'i');
+			let ExpReg2 = /C/i; //Esta es más utilizada
+
+			//Para validar
+			console.log(ExpReg.test(caden));
+			console.log(ExpReg.exec(caden));
 		</script>
 	</body>
 </html>
